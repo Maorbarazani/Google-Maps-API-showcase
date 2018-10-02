@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'mapsTestNew';
+  updatedAddress: string;
+
+  onAddressUpdate(address: string) {
+    this.updatedAddress = address;
+  }
+
 }

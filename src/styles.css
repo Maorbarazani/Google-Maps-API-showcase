@@ -1,1 +1,22 @@
-/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+agm-map {
+    height: 500px;
+}
+
+.button-row button,
+.button-row a {
+    margin-right: 8px;
+}
+
+.example-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.example-container>* {
+    width: 100%;
+}
+
+body {
+    background-color: rgb(208, 228, 255)
+}

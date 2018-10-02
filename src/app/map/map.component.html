@@ -1,0 +1,32 @@
+  <mat-icon>location_off</mat-icon>
+  <mat-slider min="0" max="1" step="0.01" value="1" thumbLabel="true" [(value)]="markerOpacity" matTooltip="Marker Opacity"
+    matTooltipPosition="below" (input)="onOpacityChange($event)" >
+  </mat-slider>
+
+  <mat-icon>zoom_in</mat-icon>
+  <mat-slider min="1" max="22" step="0.01" value="8" thumbLabel="true" [(value)]="mapZoom" matTooltip="Zoom"
+    matTooltipPosition="after" (input)="onZoomChange($event)">
+  </mat-slider>
+
+<agm-map 
+[(latitude)]="lat" [(longitude)]="lng" 
+[(zoom)]="mapZoom" 
+(idle)="onMapIdle($event)" 
+(centerChange)="onMapDrag($event)"
+[rotateControl]="true"
+[scaleControl]="true"
+[mapTypeControl]="true"
+>
+  <!--
+    current position marker:
+    <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+  -->
+  <agm-marker-cluster [imagePath]="'https://googlemaps.github.io/js-marker-clusterer/images/m'">
+    <agm-marker *ngFor="let m of markers" 
+    [latitude]="m.latitude" 
+    [longitude]="m.longitude" 
+    [opacity]="markerOpacity"
+    ></agm-marker>
+  </agm-marker-cluster>
+
+</agm-map>

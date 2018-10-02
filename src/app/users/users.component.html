@@ -1,0 +1,13 @@
+<br>
+
+<mat-form-field>
+  <mat-select placeholder="User" [(value)]="selectedUser" (selectionChange)="selectUser()" >
+    <mat-option>None</mat-option>
+    <mat-option *ngFor="let u of allUsers" [value]="u">{{u.name}}, [{{u.location.latitude}},{{u.location.longitude}}] </mat-option>
+  </mat-select>
+</mat-form-field>
+
+
+
+<button mat-raised-button color="warn" (click)="sortUsers()"matTooltip="Sort users from nearest to farthest" 
+matTooltipPosition="after">Sort Users</button>

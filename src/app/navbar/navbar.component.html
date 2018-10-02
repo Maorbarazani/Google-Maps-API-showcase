@@ -1,0 +1,11 @@
+<div class="button-row">
+  <button mat-raised-button color="primary" (click)="addressToMap('Australia')">Australia</button>
+  <button mat-raised-button color="primary" (click)="addressToMap('Israel')">Israel</button>
+  <button mat-raised-button color="primary" (click)="addressToMap('United States')">United States</button>
+  <button mat-raised-button color="primary" (click)="addressToMap('France')">France</button>
+  <button mat-raised-button color="primary" (click)="addressToMap('Japan')">Japan</button>
+  <mat-form-field><input #search matInput (keyup.enter)="addressToMap(search.value)" placeholder="Search for a place..">
+  </mat-form-field>
+</div>
+<br>
+<button mat-raised-button color="accent" (click)="printValues()">Print Coordinates</button>
